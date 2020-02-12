@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1>Home Page</h1>
+    <h1 class="page"> Liste de films sur Batman :</h1>
     <div class="affiche">
     <div v-for="film in films"
     :key="film.imdbID">
         <div class="carte">
         <h1>{{film.Title}}</h1>
-        <h2>{{film.Year}}</h2>
         <img :src="film.Poster">
+        <a :href="`#/Information/${film.imdbID}`">Lire plus</a>
         </div>
     </div>
     </div>
@@ -33,13 +33,21 @@ export default {
 </script>
 
 <style>
+.page{
+    margin-left: 37%;
+    text-decoration:underline;
+}
 .affiche{
     display: flex;
-    width: 10O% !important;
 }
 .carte{
+    margin: 15px;
+    width:300px;
     border: solid 1px black;
-    background-color: red;
+    background-color: grey;
+}
+.carte img{
+    width: 300px;
 }
 .carte h1{
     font-size: 1.3rem;

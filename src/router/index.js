@@ -9,7 +9,10 @@ import Information from './../view/Information.vue';
 
 const routes = [
   { path: '/', component: HomePage },
-  { path: '/Information', component: Information }
+  {
+      path: '/Information/:id',
+      component: Information
+    }
 ]
 
 
